@@ -1,0 +1,19 @@
+name: S4_model_poisoning
+description: FRL under model poisoning. Same traffic as S2 with 10 to 20 percent of FRL clients sending poisoned updates.
+traffic_mode: bursty
+enable_hotspots: true
+total_slots: 18000
+n_seeds_default: 10
+schemes: [frl_qkd, frl_noqkd]
+traffic:
+  hotspot_cluster_fraction: 0.30
+  hotspot_burst_interval_s: 2
+  burst_on_slots: 60
+  burst_off_slots: 300
+federated:
+  use_trust_weights: true
+  use_key_status_features: true
+attacks:
+  model_poisoning_fraction: 0.20
+  model_poisoning_scale: 0.20
+  free_riding_fraction: 0.05

@@ -1,0 +1,50 @@
+# Reconstruction assumptions for unspecified thesis details
+
+This suite was reconstructed from the uploaded thesis text. Wherever the thesis gave a range rather than one exact value, or omitted a low-level implementation constant, this package chooses one defensible default and documents it here.
+
+## Values taken directly from the thesis
+- Base deployment area: `100 x 100 m^2`
+- Base node count: `100`
+- Base CH count: `10`
+- Sink position: `(50, 0)` in the base case
+- Communication radius: `25 m`
+- Initial node energy: `2 J`
+- `E_elec = 50e-9 J/bit`
+- `epsilon_amp = 100e-12 J/bit/m^alpha`
+- Base path-loss exponent: `2.5`
+- Alternate harsh propagation exponent: `3.5`
+- Data packet size: `512 bits`
+- FRL/control packet shard size range: `2–8 kbit`
+- Base sensing interval: `10 s`
+- Base FRL round interval: `60 s`
+- Base QKD settings: `L_QKD = 10 km`, `alpha_QKD = 0.25 dB/km`, `R0 = 50 kbit/s`, `QBER = 0.02`, `f_EC = 1.15`, `K_max = 1e7 bits`, `T_refresh = 300 s`
+
+## Inferred defaults (chosen because the thesis did not pin them down exactly)
+- Slot duration: `1 s`
+- Queue capacity: `32 packets`
+- Forwarding service rate: `2 packets/slot`
+- Minimum node separation: `5 m`
+- CH spatial backoff distance: `0.5 * communication radius`
+- Reward weights: `alpha_E=0.40, alpha_Q=0.35, alpha_S=0.15, alpha_P=0.10`
+- Participation thresholds:
+  - energy threshold `0.25`
+  - key-pool threshold `0.30`
+  - trust threshold `0.60`
+- DQN learning rate default inside thesis range: `3e-4`
+- DQN replay buffer size default inside thesis range: `50000`
+- DQN batch size default inside thesis range: `64`
+- DQN target update period default inside thesis range: `250 local steps`
+- Local steps per FRL round: `12` (inside thesis range `10–20`)
+- Client fraction per round: `0.30`
+- Burst model: hotspot clusters are active for `60` slots and idle for `300` slots
+- Sensing energy: `5e-6 J` per sensed packet
+- DQN computation energy:
+  - inference `2e-6 J`
+  - training step `8e-6 J`
+- QKD key consumption:
+  - FRL session key `256 bits`
+  - broadcast session key `256 bits`
+  - control message key `128 bits`
+
+## Why these choices were made
+The thesis provides a high-level, simulation-oriented methodology, but it does not include the original code repository, per-scenario config files, packet scheduler, exact queue capacity, per-FLOP energy model, or exact attack magnitudes for every subplot. This suite therefore implements the thesis faithfully where specified and transparently fills in the missing engineering constants where the text only gives ranges or conceptual descriptions.

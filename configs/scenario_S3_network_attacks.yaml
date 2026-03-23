@@ -1,0 +1,18 @@
+name: S3_network_attacks
+description: FRL under network-layer attacks. Same traffic as S2 with selective forwarding and false-metric advertising by up to 20 percent of nodes.
+traffic_mode: bursty
+enable_hotspots: true
+total_slots: 18000
+n_seeds_default: 10
+schemes: [frl_qkd, frl_noqkd, heuristic]
+traffic:
+  hotspot_cluster_fraction: 0.30
+  hotspot_burst_interval_s: 2
+  burst_on_slots: 60
+  burst_off_slots: 300
+attacks:
+  selective_forwarding_fraction: 0.20
+  selective_forwarding_drop_probability: 0.50
+  false_metric_fraction: 0.20
+  false_metric_bias: 0.30
+  model_poisoning_fraction: 0.0

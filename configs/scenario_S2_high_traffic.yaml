@@ -1,0 +1,30 @@
+name: S2_high_traffic
+description: High traffic load. Periodic sensing plus moderate bursty events in about 30 percent of clusters.
+traffic_mode: bursty
+enable_hotspots: true
+total_slots: 18000
+n_seeds_default: 10
+schemes: [frl_qkd, heuristic, centralized_rl, fl, frl_noqkd]
+network:
+  n_nodes: 100
+  n_cluster_heads: 10
+energy:
+  path_loss_exponent: 2.5
+traffic:
+  hotspot_cluster_fraction: 0.30
+  hotspot_burst_interval_s: 2
+  burst_on_slots: 60
+  burst_off_slots: 300
+federated:
+  global_rounds: 300
+  frl_round_interval_s: 60
+  client_fraction: 0.30
+qkd:
+  enabled: true
+  link_length_km: 10.0
+  nominal_qber: 0.02
+attacks:
+  selective_forwarding_fraction: 0.0
+  false_metric_fraction: 0.0
+  model_poisoning_fraction: 0.0
+  free_riding_fraction: 0.0

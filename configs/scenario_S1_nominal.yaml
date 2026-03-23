@@ -1,0 +1,38 @@
+name: S1_nominal
+description: Nominal FRL + QKD. Periodic sensing, no bursts, no attacks, base QKD configuration.
+traffic_mode: periodic
+enable_hotspots: false
+total_slots: 18000
+n_seeds_default: 10
+schemes: [frl_qkd, heuristic, frl_noqkd]
+assumptions:
+  note: Base scenario from thesis Table 6.1.
+network:
+  n_nodes: 100
+  n_cluster_heads: 10
+  sink_position_mode: edge_center
+energy:
+  path_loss_exponent: 2.5
+traffic:
+  data_packet_bits: 512
+  control_packet_bits: 4096
+  sense_interval_s: 10
+federated:
+  global_rounds: 300
+  frl_round_interval_s: 60
+  client_fraction: 0.30
+qkd:
+  enabled: true
+  link_length_km: 10.0
+  attenuation_db_per_km: 0.25
+  baseline_secret_key_rate_bps: 50000.0
+  nominal_qber: 0.02
+  error_correction_efficiency: 1.15
+  key_pool_capacity_bits: 10000000
+  target_refresh_interval_s: 300
+attacks:
+  selective_forwarding_fraction: 0.0
+  false_metric_fraction: 0.0
+  model_poisoning_fraction: 0.0
+  free_riding_fraction: 0.0
+  classical_key_compromise_fraction: 0.0

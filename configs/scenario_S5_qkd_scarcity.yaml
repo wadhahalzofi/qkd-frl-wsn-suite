@@ -1,0 +1,16 @@
+name: S5_qkd_scarcity
+description: QKD degradation and key scarcity. Same as S1 but with elevated QBER and longer QKD link length.
+traffic_mode: periodic
+enable_hotspots: false
+total_slots: 18000
+n_seeds_default: 10
+schemes: [frl_qkd, frl_noqkd]
+qkd:
+  enabled: true
+  link_length_km: 20.0
+  nominal_qber: 0.08
+  attenuation_db_per_km: 0.25
+  baseline_secret_key_rate_bps: 50000.0
+  target_refresh_interval_s: 300
+attacks:
+  elevated_qber: 0.08
