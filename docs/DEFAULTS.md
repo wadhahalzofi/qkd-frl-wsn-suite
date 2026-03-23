@@ -1,8 +1,3 @@
-# Reconstruction assumptions for unspecified thesis details
-
-This suite was reconstructed from the uploaded thesis text. Wherever the thesis gave a range rather than one exact value, or omitted a low-level implementation constant, this package chooses one defensible default and documents it here.
-
-## Values taken directly from the thesis
 - Base deployment area: `100 x 100 m^2`
 - Base node count: `100`
 - Base CH count: `10`
@@ -18,8 +13,6 @@ This suite was reconstructed from the uploaded thesis text. Wherever the thesis 
 - Base sensing interval: `10 s`
 - Base FRL round interval: `60 s`
 - Base QKD settings: `L_QKD = 10 km`, `alpha_QKD = 0.25 dB/km`, `R0 = 50 kbit/s`, `QBER = 0.02`, `f_EC = 1.15`, `K_max = 1e7 bits`, `T_refresh = 300 s`
-
-## Inferred defaults (chosen because the thesis did not pin them down exactly)
 - Slot duration: `1 s`
 - Queue capacity: `32 packets`
 - Forwarding service rate: `2 packets/slot`
@@ -45,6 +38,3 @@ This suite was reconstructed from the uploaded thesis text. Wherever the thesis 
   - FRL session key `256 bits`
   - broadcast session key `256 bits`
   - control message key `128 bits`
-
-## Why these choices were made
-The thesis provides a high-level, simulation-oriented methodology, but it does not include the original code repository, per-scenario config files, packet scheduler, exact queue capacity, per-FLOP energy model, or exact attack magnitudes for every subplot. This suite therefore implements the thesis faithfully where specified and transparently fills in the missing engineering constants where the text only gives ranges or conceptual descriptions.

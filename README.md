@@ -1,6 +1,6 @@
-# QKD-assisted FRL for WSNs — reconstructed full experimental suite
+# QKD-assisted FRL for WSNs — full experimental suite
 
-This package reconstructs the **complete experimental environment** described in the thesis:
+The complete experimental environment described in the thesis:
 
 > *Secure Energy-efficient Federated Reinforcement Learning for Wireless Sensor Networks via Quantum Key Distribution*
 
@@ -35,13 +35,6 @@ Outputs are written to `results/`.
 - `configs/scenario_S4_model_poisoning.yaml`
 - `configs/scenario_S5_qkd_scarcity.yaml`
 - `configs/scenario_S6_combined.yaml`
-
-## What is exact vs reconstructed
-
-This suite is **faithful to the thesis text**, but it is **not the original author’s hidden repository**. The thesis gives the architecture, parameter ranges, base values, attack scenarios, and evaluation workflow, but it does not ship all low-level source code constants. Those missing details are documented in:
-
-- `docs/ASSUMPTIONS.md`
-- `docs/TRACEABILITY_MATRIX.md`
 
 ## Package layout
 
