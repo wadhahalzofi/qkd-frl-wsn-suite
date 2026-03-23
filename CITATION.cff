@@ -10,9 +10,9 @@ authors:
 date-released: 2026-03-23
 version: 1.0.0
 license: MIT
-repository-code: "https://github.com/wadhah-al-zofi/qkd-frl-wsn-suite"
+repository-code: "https://github.com/wadhahalzofi/qkd-frl-wsn-suite"
 repository-artifact: "https://zenodo.org/doi/PLACEHOLDER"  # Will be filled after Zenodo archival
-documentation: "https://github.com/wadhah-al-zofi/qkd-frl-wsn-suite#readme"
+documentation: "https://github.com/wadhahalzofi/qkd-frl-wsn-suite#readme"
 keywords:
   - "federated learning"
   - "quantum key distribution"
