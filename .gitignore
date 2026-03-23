@@ -1,0 +1,12 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# Results and generated files
+results/
+
+# Local test cache
+tests/__pycache__/
+
+# Git metadata
+.git
